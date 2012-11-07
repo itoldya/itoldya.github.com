@@ -3,6 +3,9 @@ body, html{
     margin: 0;
     padding: 0;
     color: #222;
+    background-image: url(img/orig/6791340103_7b1598e5c9_b.jpg);
+    background-repeat: repeat-x;
+    background-attachment: fixed;
 }
 ul, ol {
     margin: 0;
@@ -12,18 +15,13 @@ ul, ol {
 a {color: #3396CF;}
 
 #top-line {
-    height: 25px;
-    background-color: #E8E8E8;
-    background-color: rgba(226, 226, 226, .95);
-    border-bottom: solid 1px #D1D1D1;
-    border-bottom: solid 1px rgba(197, 197, 197, .95);
-    font-size: 12px;
+    height: 5px;
+    background-color: black;
     position: absolute;
     left: 0px;
     top: 0px;
     width: 100%;
-    color: #555;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
+
 }
 #top-line .wrap{
     text-align: right;
@@ -34,12 +32,15 @@ a {color: #3396CF;}
     text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
 }
 .container{
+    background: white;
     margin-left: auto;
     margin-right: auto;
-    width: 940px;
+    width: 1000px;
+    padding: 0 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 }
 header#primary{
-    margin: 20px auto 15px auto;
+    margin: 5px auto 15px auto;
     overflow: auto;
 }
 header#primary .logo{
