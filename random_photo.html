@@ -10,7 +10,7 @@
   <!--[if lt IE 8]>
   <![endif]-->
   <style type="text/css">
-    body, html{background: black}
+    body, html{background: black; overflow: hidden;}
   </style>
 </head>
 <body>
@@ -43,29 +43,19 @@ function loadImages() {
         }
         var newImage = document.createElement('a');
         newImage.id = randomChar;
-        newImage.onclick = function() {
-            var img = id('img.' + randomChar);
-            if (img.getAttribute('style') == 'height:auto') {
-                img.setAttribute('style', 'display:none');
-                this.setAttribute('style', 'width:100%;height:100%;margin:0;padding:0;position:fixed;top:0;left:0;z-index:16;background:url(' + img.src + ') no-repeat center center #FFFFFF')
-            } else {
-                img.setAttribute('style', 'height:auto');
-                this.setAttribute('style', '')
-            }
-            return false
-        };
+
         newImage.href = 'http://i.imgur.com/' + randomChar + '.jpg';
         newImage.innerHTML = '<img alt="' + randomChar + '" id="img.' + randomChar + '" src="http://i.imgur.com/' + randomChar + '.jpg" style="position:absolute;top:-9000px" onload="checkImages(this,\'' + randomChar + '\')" onerror="checkImages(null,\'' + randomChar + '\')">';
         id('hidden_images').appendChild(newImage);
 }
 function checkImages(image, parent) {
     if (image != null && doneImages < amount && doneLast != image.src && image.width > 164 && image.height > 86) {
-        image.setAttribute('style', 'px;height:auto');
-        doneLast = image.src;
+        image.setAttribute('style', 'max-height:'+document.body.offsetHeight + ';max-width:'+ document.body.offsetWidth);
+        
         id('images').innerHTML = '';
         id('images').appendChild(image);
 
-        window.setTimeout(loadImages, 1000)
+        window.setTimeout(loadImages, 3000)
 
     } else {
         var node = document.getElementById(parent);
