@@ -55,7 +55,7 @@ function checkImages(image, parent) {
         id('images').innerHTML = '';
         id('images').appendChild(image);
 
-        window.setTimeout(loadImages, 3000)
+        window.setTimeout(loadImages, parseInt(window.location.hash.replace('#', '')))
 
     } else {
         var node = document.getElementById(parent);
